@@ -18,7 +18,7 @@ $("#update_user").submit(function(event){
     console.log(data);
 
     var request={
-        "url":`https://cheers-makeover.herokuapp.com/api/users/${data.id}`,
+        "url":`https://cheersmakeover.herokuapp.com/api/users/${data.id}`,
         "method":"PUT",
         "data":data
     }
@@ -35,7 +35,7 @@ if(window.location.pathname =="/adminpage"){
         var id=$(this).attr("data-id")
 
         var request={
-            "url":`https://cheers-makeover.herokuapp.com/api/users/${id}`,
+            "url":`https://cheersmakeover.herokuapp.com/api/users/${id}`,
             "method":"DELETE"
         }
         if(confirm("Do you really want to delete this Appointment?")){
