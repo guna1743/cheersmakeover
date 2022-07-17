@@ -8,7 +8,7 @@ const Userdb = require('../models/model');
 
 router.get('/userpage',(req,res)=>{
    //make a get request to /api/users
-   axios.get('https://cheers-makeover.herokuapp.com/api/users',{params:{id:req.query.id}})
+   axios.get('https://cheersmakeover.herokuapp.com/api/users',{params:{id:req.query.id}})
      .then(function(response){
         res.render("userpage",{users:response.data});
      })
@@ -24,7 +24,7 @@ router.get('/userpage',(req,res)=>{
 
 router.get('/adminpage',(req,res)=>{
    //make a get request to /api/users
-   axios.get('https://cheers-makeover.herokuapp.com/api/users')
+   axios.get('https://cheersmakeover.herokuapp.com/api/users')
      .then(function(response){
       console.log(response)
         res.render("adminpage",{users:response.data});
@@ -44,7 +44,7 @@ router.get('/adminpage',(req,res)=>{
 
 router.get('/userform',(req,res)=>res.render("userform"));
 router.get('/update-user',(req,res)=>{
-   axios.get('https://cheers-makeover.herokuapp.com/api/users',{params:{id:req.query.id}})
+   axios.get('https://cheersmakeover.herokuapp.com/api/users',{params:{id:req.query.id}})
      .then(function(userdata){
       res.render("userupdate",{user:userdata.data})
      })
