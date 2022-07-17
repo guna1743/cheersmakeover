@@ -1,0 +1,158 @@
+
+<section  id="home">
+  <header id="header">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand ms-2 " href="#">CHEERS MAKEOVER</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <ul class="nav navbar-nav justify-content-end collapse navbar-collapse" id="navbarNav">
+            <li class="nav-item">
+              <a class="nav-link"  href="/dashboard" style="color: white;font-family:Georgia, 'Times New Roman', Times, serif;">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="/userpage" style="color: white;font-family:Georgia, 'Times New Roman', Times, serif;">BOOKINGS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/logout" style="color: white;font-family:Georgia, 'Times New Roman', Times, serif;">LOG OUT</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  </header>
+</section>
+<br><br><br>
+    <main id="site-main">
+
+        <div class="container">
+            <div class="box-nav d-flex-justify-between">
+                <div class="filter">
+                    <a href="/userpage"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                        <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                      </svg>All Booked Details</a>
+                </div>
+            </div>
+
+            <div class="form-title text-center">
+                <h2 class="text-dark" style="color: #ff675f;">Appointment Form</h2>
+                <span style="color:green;">Use the below form to book your appointment</span>
+            </div>
+
+            <br>
+
+            <form  name="myForm" onsubmit="return validateForm()" action="/api/users" method="POST" class="form-control" id="add_user" >
+                <div class="new_user">
+                    <div class="form-group">
+                        <label for="name" >Name</label>&emsp14;&emsp14;
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="name" value="" placeholder="Full Name" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" >Email</label>&emsp14;&emsp14;&emsp14;
+                        <input type="email" name="email" value="" placeholder="example@gmail.com" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control">
+                    </div>
+                    
+                    <!--<div class="form-group">
+                        <label for="services" class="text-dark">Services</label>
+                        <div class="radio inline">
+                            <input type="checkbox" id="radio-2" name="services" value="Bridal Makeup">
+                            <label for="radio-2" class="radio-label">Bridal Makeup</label>
+                        </div>
+                        <div class="radio inline">
+                            <input type="checkbox" id="radio-3" name="services" value="HD Makeover">
+                            <label for="radio-3" class="radio-label">HD Makeover</label>
+                        </div>
+                    </div>-->
+
+                    <div class="form-group" class="select">
+                        <label for="services">Choose services:</label>&emsp14;&emsp14;&emsp14;&emsp14;
+                        <select name="services" id="services1" multiple class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control" >
+                          <option value="Bridal Makeup">Bridal Makeup</option>
+                          <option value="HD Makeover">HD Makeover</option>
+                          <option value="Bridesmaid Makeup">Bridesmaid Makeup</option>
+                          <option value="Party Makeup">Party Makeup</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" class="cpad1">
+                        <label for="date"> Date</label>
+                        <input type="date" name="date" value="" placeholder="Enter Date" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="time"> Time</label>
+                        <input type="time" name="time" value="" placeholder="Enter time" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control">
+                    </div>
+
+                    <div class="form-group">
+						            <label for="phoneno">Phone Number</label>
+                        <input type="text" name="phoneno" value="" class="form-control" placeholder="Phone Number"  class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="stylist">Choose stylist:</label>
+                        <select name="stylist" id="stylist" value=""  class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-control">
+                          <option value="Andal Sankar">Andal Sankar</option>
+                          <option value="Shalini">Shalini</option>
+                          <option value="Abinaya">Abinaya</option>
+                          <option value="Andrea">Andrea</option>
+                        </select>
+                    </div>
+
+                    
+                    
+
+                    <div class="form-group">
+                        <button type="submit" class="btn text-white update">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    </header>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <script src="/js/success.js"></script>
+    <script>
+        function validateForm() {
+  let a = document.forms["myForm"]["name"].value;
+  let b = document.forms["myForm"]["email"].value;
+  let c = document.forms["myForm"]["services"].value;
+  let d = document.forms["myForm"]["date"].value;
+  let e = document.forms["myForm"]["time"].value;
+  let f = document.forms["myForm"]["phoneno"].value;
+  let g = document.forms["myForm"]["stylist"].value;
+  if (a == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  if (b == "") {
+    alert("Email must be filled out");
+    return false;
+  }
+  if (c == "") {
+    alert("Services must be filled out");
+    return false;
+  }
+  if (d == "") {
+    alert("Date must be filled out");
+    return false;
+  }
+  if (e == "") {
+    alert("Time must be filled out");
+    return false;
+  }
+  if (f == "") {
+    alert("Phone number must be filled out");
+    return false;
+  }
+  if (g == "") {
+    alert("Stylist must be filled out");
+    return false;
+  }
+}
+    </script>

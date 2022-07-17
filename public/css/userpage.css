@@ -1,0 +1,152 @@
+thead{
+    background-color: goldenrod;
+}
+.table tr:hover{
+    background-color: grey;
+}
+
+@media only screen and (max-width:1024px){
+    table,thead,tbody,th,td,tr{
+        display: block;
+    }
+
+    thead tr{
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr{
+        border: 1px solid blue;
+    }
+    td{
+        border: none;
+        border-bottom: 1px solid blue;
+        position: relative;
+    }
+}
+
+/* add user & update user template*/
+
+
+.new_user{
+    max-width: 786px;
+    margin: auto;
+}
+
+#update_user .form-group,
+#add_user .form-group{
+    margin: 1em 0;
+}
+
+#update_user .form-group input[type="text"],
+#add_user .form-group input[type="text"]
+{
+    width: 70%;
+    padding:.6em 1em;
+    margin: .5em 0;
+    border: 1px solid lightgray;
+}
+#update_user .form-group input[type="email"],
+#add_user .form-group input[type="email"]
+{
+    width: 70%;
+    padding:.6em 1em;
+    margin: .5em 0;
+    border: 1px solid lightgray;
+}
+
+#update_user .form-group .radio,
+#add_user .form-group .radio
+{
+    margin:1em 2em;
+}
+
+/*adding style to radio buttons*/
+.radio input[type='radio']{
+    position: absolute;
+    opacity: 0;
+
+}
+
+.radio input[type='radio']+ .radio-label:before{
+    content: "";
+    background: white;
+    border-radius:100%;
+    border: 1px solid goldenrod;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: -0em;
+    margin-right: .5em;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    -webkit-transition: all 250ms ease;
+    transition: all 250ms ease;
+}
+
+.radio input[type='radio']:checked + .radio-label:before{
+    background-color: #16db93;
+    box-shadow: inset 0 0 0 4px #e9ecef;
+}
+
+.radio input[type='radio']:focus + .radio-label:before{
+    outline: none;
+    border-color: #16db93;
+}
+
+.radio input[type='radio']:disabled + .radio-label:before{
+    box-shadow: inset 0 0 0 4px #e9ecef;
+    border-color: #b4b4b4;
+    background: #b4b4b4;
+}
+
+#update_user .form-group .btn,
+#add_user .form-group .btn
+{
+    width: 76%;
+    padding: .9em 1em;
+    background-color: #16db93;
+    border: none;
+    cursor: pointer;
+    border-radius: .2em;
+    margin: .5em 0;
+}
+
+#services1{
+    width: 59%;
+    padding:.6em 1em;
+    margin: .5em 0;
+    border: 1px solid lightgray;
+}
+
+#stylist{
+    width: 63%;
+    padding:.6em 1em;
+    margin: .5em 0;
+    border: 1px solid lightgray;
+}
+
+.firsthead{
+    background-image:url('/css/images/imagehome.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    margin-left: -20px;
+}
+
+.firsthead2{
+    background-image:url('/css/images/imagehome.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    margin-left: -20px;
+}
+.firsthead3{
+    background-image:url('/css/images/imagehome.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    margin-left: -20px;
+}

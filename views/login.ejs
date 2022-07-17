@@ -1,0 +1,54 @@
+<%if(page=='register'){%>
+<div class="container right-panel-active" id="container">
+<%}else{%>
+	<div class="container" id="container">
+		<%}%>	
+	<div class="form-container sign-up-container">
+		<form  action="/users/register"  method="POST">
+			<h1 style="font-size: 20px;">Create Account</h1>
+			<%if(page=="register"){%>
+			<%- include ('./partials/messages') %>
+			<%}%>
+			<br>
+			<input type="text" placeholder="Name" id="name" name="name" value="<%= typeof name != 'undefined' ? name : '' %>"/>
+			<input type="email" placeholder="Email" id="email" name="email" value="<%= typeof email != 'undefined' ? email : '' %>" />
+			<input type="password" placeholder="Password" id="password" name="password" value="<%= typeof password != 'undefined' ? password : '' %>"/>
+            <input type="password" placeholder="Confirm Password" id="password2" name="password2" value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
+            <br>
+			<button>Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="/users/login" method="POST">
+			<h1 style="font-size: 20px;">Sign in</h1>
+			<%if(page=="login"){%>
+      <%- include ('./partials/messages') %>
+	  <%}%>
+			<br>
+			<input type="email" placeholder="Email" id="email" name="email"/>
+			<input type="password" placeholder="Password" id="password" name="password"/>
+			<br>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1 style="font-size: 20px;">Welcome Back!</h1>
+				<p style="color: wheat;">To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1 style="font-size: 20px;">Hello, Friend!</h1>
+				<p style="color: wheat;">Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="/js/login.js"></script>
+
+<link href="/css/login.css" rel="stylesheet" type="text/css">
+
+
